@@ -14,10 +14,10 @@ pipeline {
     }
     stage('Executing') {
       steps {   
-        sh "chmod  +x scripts/task1.sh"
-        sh "chmod  +x scripts/task2.sh"
-        sh('scripts/task1.sh')   
-        sh('scripts/task2.sh')   
+        sh "chmod  +x scripts/scripts/task1.sh"
+        sh "chmod  +x scripts/scripts/task2.sh"
+        sh('scripts/scripts/task1.sh')   
+        sh('scripts/scripts/task2.sh')   
       }
     }
     stage('Archiving') { 
