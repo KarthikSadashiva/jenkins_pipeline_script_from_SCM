@@ -1,0 +1,14 @@
+pipeline{
+  agent any{
+  stages{
+    stage('Downloading CentOS Latest'){
+      steps{
+        sh "docker pull centos:latest"
+      }
+    }
+    stage('Creating a Docker container with CentOS'){
+      steps{
+        sh "docker run centos /bin/bash"
+      }
+    }
+    
