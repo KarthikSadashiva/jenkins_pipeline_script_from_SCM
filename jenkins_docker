@@ -11,4 +11,5 @@ pipeline{
         sh "docker run centos /bin/bash"
       }
     }
+  }
 }    
