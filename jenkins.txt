@@ -26,14 +26,7 @@ pipeline {
         archiveArtifacts "scripts/*.sh"   
       }
     }
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'centos'
-        }
-      }
-      
-    }
+    
   }
   
   
