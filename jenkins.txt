@@ -28,9 +28,9 @@ pipeline {
   }
   post{
     always{
-      steps {
+      
         echo "RESULT: ${currentBuild.currentResult}"
-      } 
+      
     }
   }
 }
