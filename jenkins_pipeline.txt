@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Archiving') { 
       steps {
-        archiveArtifacts "scripts/*.sh"   
+        archiveArtifacts "scripts/scripts/*.sh"   
       }
     }
     stage('Final stage') {
