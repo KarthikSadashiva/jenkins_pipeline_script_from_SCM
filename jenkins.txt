@@ -23,8 +23,8 @@ pipeline {
       steps {   
         sh "chmod  +x scripts/task1.sh"
         sh "chmod  +x scripts/task2.sh"
-        sh('scripts/task1.sh')   
-        sh('scripts/task2.sh')   
+        sh('./scripts/task1.sh')   
+        sh('./scripts/task2.sh')   
       }
     }
     stage('Archiving') { 
