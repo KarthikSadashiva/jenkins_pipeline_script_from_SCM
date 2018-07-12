@@ -32,9 +32,7 @@ pipeline {
           image 'centos'
         }
       }
-      #steps {
-        #sh 'mvn clean install'
-      #}
+      
     }
   }
   
