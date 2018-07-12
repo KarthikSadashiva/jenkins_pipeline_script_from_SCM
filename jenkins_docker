@@ -11,5 +11,10 @@ pipeline{
         sh "docker run centos /bin/bash"
       }
     }
+    stage('Starting the container'){
+      steps{
+        sh "docker start 9e4e9ef8b671"
+      }
+    }
   }
 }    
