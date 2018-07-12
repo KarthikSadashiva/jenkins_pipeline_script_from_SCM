@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('Downloading CentOS Latest'){
       steps{
-        sh "docker pull centos:latest"
+        sh "docker pull centos:6.7"
       }
     }
     stage('Creating a Docker container with CentOS'){
