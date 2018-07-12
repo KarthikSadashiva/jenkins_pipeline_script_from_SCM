@@ -1,0 +1,36 @@
+pipeline {
+  agent any
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout([$class: 'GitSCM',
+        branches: [[name: '*/master']], 
+        doGenerateSubmoduleConfigurations: false,
+        extensions: [[$class: 'RelativeTargetDirectory', 
+        relativeTargetDir: 'scripts']], 
+        submoduleCfg: [], 
+        userRemoteConfigs: [[url: 'https://github.com/KarthikSadashiva/shell_scripts']]])
+      }
+    }
+    stage('Executing') {
+      steps {   
+        sh "chmod  +x scripts/scripts/task1.sh"
+        sh "chmod  +x scripts/scripts/task2.sh"
+        sh('scripts/scripts/task1.sh')   
+        sh('scripts/scripts/task2.sh')   
+      }
+    }
+    stage('Archiving') { 
+      steps {
+        archiveArtifacts "scripts/scripts/*.sh"   
+      }
+    }
+  }
+  post{
+    Always('Final stage') {
+      steps {
+        echo "RESULT: ${currentBuild.currentResult}"
+      } 
+    }
+  }
+}
